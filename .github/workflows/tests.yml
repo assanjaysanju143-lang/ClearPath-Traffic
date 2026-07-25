@@ -16,12 +16,9 @@ jobs:
       run:
         working-directory: backend
 
-<<<<<<< HEAD
-=======
     env:
       PYTHONPATH: .
 
->>>>>>> f2130e5 (Fix GitHub Actions PYTHONPATH)
     steps:
       - uses: actions/checkout@v4
 
