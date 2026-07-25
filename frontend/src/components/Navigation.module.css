@@ -1,0 +1,155 @@
+.nav { display: flex; flex-direction: column; padding: 20px 28px; gap: 14px; }
+
+/* Idle */
+.idle { display: flex; flex-direction: column; align-items: center; gap: 14px; padding: 28px 0; text-align: center; }
+.idleIcon { font-size: 40px; color: var(--text3); animation: pulse 2.5s ease infinite; }
+.idleText { font-size: 13px; color: var(--text3); }
+
+/* Locating */
+.locating { display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 28px 0; }
+.locating p { font-size: 13px; color: var(--text2); }
+
+/* Spinner */
+.spinner {
+  width: 20px; height: 20px;
+  border: 2px solid var(--border2);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: inline-block;
+}
+
+/* Buttons */
+.startBtn {
+  width: 100%; padding: 13px;
+  background: var(--primary); color: var(--primary-text);
+  border: none; border-radius: 6px;
+  font-family: var(--font-display); font-size: 13px; font-weight: 700;
+  cursor: pointer; transition: opacity 0.15s;
+}
+.startBtn:hover { opacity: 0.88; }
+
+/* Destination phase */
+.destPhase { display: flex; flex-direction: column; gap: 10px; }
+.gpsConfirm {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 11px; color: var(--green);
+  font-family: var(--font-display); font-weight: 600;
+}
+.gpsDot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 0 3px #17803d29;
+  animation: pulse 1.5s ease infinite;
+  flex-shrink: 0;
+}
+.destInput {
+  width: 100%; padding: 12px 14px;
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: 6px; color: var(--text);
+  font-family: var(--font-body); font-size: 14px;
+  outline: none; transition: border-color 0.2s;
+}
+.destInput:focus { border-color: var(--primary); }
+.destInput::placeholder { color: var(--text3); }
+.goBtn {
+  width: 100%; padding: 13px;
+  background: var(--primary); color: var(--primary-text);
+  border: none; border-radius: 6px;
+  font-family: var(--font-display); font-size: 13px; font-weight: 700;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  min-height: 46px; transition: opacity 0.15s;
+}
+.goBtn:disabled { opacity: 0.5; cursor: not-allowed; }
+.goBtn:hover:not(:disabled) { opacity: 0.88; }
+
+.secondaryBtn {
+  width: 100%; padding: 12px;
+  background: transparent; color: var(--text2);
+  border: 1px solid var(--border2); border-radius: 6px;
+  font-family: var(--font-display); font-size: 12px; font-weight: 600;
+  cursor: pointer; transition: border-color 0.15s, color 0.15s;
+}
+.secondaryBtn:hover { border-color: var(--text3); color: var(--text); }
+
+.error {
+  padding: 10px 12px; background: var(--red-dim);
+  border: 1px solid var(--red); border-radius: 6px;
+  font-size: 12px; color: var(--red); line-height: 1.5;
+}
+
+/* Navigating */
+.navigating { display: flex; flex-direction: column; gap: 12px; }
+
+.assignBanner {
+  border: 1.5px solid; border-radius: 10px; padding: 14px 16px;
+  animation: fadeUp 0.3s ease;
+}
+.assignTop { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+.assignLabel { font-size: 9px; font-weight: 700; letter-spacing: 0.12em; color: var(--text3); font-family: var(--font-display); }
+.assignBadge { font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 3px; border: 1px solid; font-family: var(--font-display); }
+.assignName { font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+.assignReason { font-size: 11px; color: var(--text2); line-height: 1.5; margin-bottom: 8px; font-style: italic; }
+.assignMeta { display: flex; gap: 12px; font-size: 11px; color: var(--text3); flex-wrap: wrap; }
+
+/* HUD */
+.hud {
+  display: flex; gap: 0;
+  background: var(--bg3); border: 1px solid var(--border); border-radius: 8px; overflow: hidden;
+}
+.hudItem {
+  flex: 1; padding: 10px 8px; text-align: center;
+  border-right: 1px solid var(--border);
+}
+.hudItem:last-child { border-right: none; }
+.hudLabel { display: block; font-size: 9px; font-weight: 700; letter-spacing: 0.1em; color: var(--text3); font-family: var(--font-display); margin-bottom: 3px; }
+.hudVal { font-size: 18px; font-weight: 700; font-family: var(--font-display); color: var(--text); }
+.hudVal small { font-size: 10px; font-weight: 400; color: var(--text3); margin-left: 2px; }
+
+/* Current instruction */
+.instruction {
+  background: var(--bg3); border: 1px solid var(--border); border-radius: 8px;
+  padding: 14px 16px; animation: slideIn 0.2s ease;
+}
+.stepNum { font-size: 10px; color: var(--text3); font-family: var(--font-display); font-weight: 700; letter-spacing: 0.08em; margin-bottom: 4px; }
+.stepText { font-size: 14px; color: var(--text); font-weight: 500; line-height: 1.4; margin-bottom: 4px; }
+.stepDist { font-size: 12px; color: var(--primary); font-family: var(--font-display); font-weight: 600; }
+
+/* All steps */
+.allSteps { display: flex; flex-direction: column; gap: 0; }
+.stepRow {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 7px 0; border-bottom: 1px solid var(--border);
+  font-size: 12px; color: var(--text3); transition: color 0.2s;
+}
+.stepRow:last-child { border-bottom: none; }
+.activeStep { color: var(--text) !important; font-weight: 500; }
+.doneStep { opacity: 0.35; text-decoration: line-through; }
+.stepDot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; margin-top: 4px; transition: background 0.3s; }
+
+/* Controls */
+.controls { display: flex; gap: 8px; margin-top: 4px; }
+.voiceBtn {
+  flex: 1; padding: 10px 8px; border-radius: 6px;
+  background: transparent; border: 1px solid;
+  font-family: var(--font-display); font-size: 11px; font-weight: 600;
+  cursor: pointer; transition: all 0.15s;
+}
+.arrivedBtn {
+  flex: 2; padding: 10px; border-radius: 6px;
+  background: var(--green); color: #ffffff; border: none;
+  font-family: var(--font-display); font-size: 12px; font-weight: 700;
+  cursor: pointer; transition: opacity 0.15s;
+}
+.arrivedBtn:hover { opacity: 0.88; }
+.stopBtn {
+  width: 40px; padding: 10px; border-radius: 6px;
+  background: var(--red-dim); color: var(--red); border: 1px solid var(--red);
+  font-size: 14px; cursor: pointer; font-weight: 700;
+}
+
+/* Arrived */
+.arrived { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 28px 0; text-align: center; }
+.arrivedIcon { font-size: 40px; color: var(--green); }
+.arrivedText { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--text); }
+.arrivedSub { font-size: 12px; color: var(--text3); max-width: 240px; line-height: 1.6; }
