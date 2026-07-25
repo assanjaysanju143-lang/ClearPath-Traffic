@@ -42,6 +42,9 @@ jobs:
       run:
         working-directory: traffic-ml
 
+    env:
+      PYTHONPATH: .
+
     steps:
       - uses: actions/checkout@v4
 
@@ -52,6 +55,13 @@ jobs:
 
       - name: Install dependencies
         run: pip install -r requirements.txt
+
+      - name: Verify import
+        run: |
+          pwd
+          ls -la
+          python -c "import sys; print(sys.path)"
+          python -c "import detector; print('detector imported successfully')"
 
       - name: Run tests
         run: pytest
