@@ -239,3 +239,46 @@ Full-stack ownership of a real, non-trivial system: an algorithm (not just an AP
 wrapper), a working ML component, and — critically — the two talking to each other
 instead of sitting side by side. That combination, plus a problem grounded in a real
 city's traffic rather than a generic CRUD app, is the actual point of the project.
+
+## 📁 Project Structure
+
+```text
+ClearPath-Traffic/
+│
+├── .github/
+│   └── workflows/
+│       └── tests.yml              # GitHub Actions CI
+│
+├── backend/
+│   ├── models/                    # Data models
+│   ├── routes/                    # API endpoints
+│   ├── services/                  # Business logic
+│   ├── tests/                     # Backend unit tests
+│   ├── main.py                    # FastAPI application
+│   └── requirements.txt
+│
+├── frontend/
+│   ├── src/
+│   │   ├── components/            # React UI components
+│   │   ├── pages/                 # Application pages
+│   │   ├── services/              # API calls
+│   │   └── assets/                # Images & styles
+│   ├── public/
+│   ├── package.json
+│   └── vite.config.js
+│
+├── traffic-ml/
+│   ├── tests/                     # ML tests
+│   ├── detector.py                # YOLO26 vehicle detector
+│   ├── processor.py               # Image processing
+│   ├── ml_api.py                  # ML service API
+│   ├── run.py                     # Starts ML server
+│   ├── requirements.txt
+│   └── yolo26n.pt                 # YOLO26 model
+│
+├── README.md                      # Project documentation
+├── LICENSE
+└── .gitignore
+```
+
+## What's actually implemented (not just planned)
