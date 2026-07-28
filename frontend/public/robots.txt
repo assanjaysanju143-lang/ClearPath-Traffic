@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://clear-path-traffic.vercel.app/sitemap.xml
