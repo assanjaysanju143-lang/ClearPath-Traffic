@@ -26,7 +26,7 @@ app.add_middleware(
 
 # Main routing backend — camera reports get pushed here so the routing
 # engine can factor real, present-moment vehicle counts into its decisions.
-BACKEND_URL = "http://localhost:8000"
+BACKEND_URL = "https://clearpath-traffic.onrender.com"
 
 # Load model once at startup
 detector = VehicleDetector(model_size="n", confidence=0.35)
